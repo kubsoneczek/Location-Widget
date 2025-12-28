@@ -1,3 +1,5 @@
+const MIN_API_INTERVAL = 120000; // 2 min
+let lastFetch = 0;
 const API_KEY = "PUT_YOUR_API_KEY_HERE";
 const UNITS = "metric";
 
@@ -18,6 +20,10 @@ setInterval(updateTime, 1000);
 
 // 🌍 LOCATION + TEMP + FLAG
 async function loadLocationAndData() {
+  const now = Date.now();
+if (now - lastFetch < MIN_API_INTERVAL) return;
+lastFetch = now;
+
   const locText = await fetch("location.txt").then(r => r.text());
   const clean = locText.trim();
   document.getElementById("location").textContent = clean;
