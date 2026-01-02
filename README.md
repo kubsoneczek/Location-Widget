@@ -32,5 +32,7 @@ Simple HTML widget for IRL streams:
 
 Edit `location.txt` and refresh Browser Source.
 
+Tutorial is only in Poland Language. If you are Polish, click below
+https://sites.google.com/view/kubson462/location-widget-poradnik-pl
 
 
